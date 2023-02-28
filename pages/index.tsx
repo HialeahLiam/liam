@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
-import { Staatliches } from "next/font/google";
+import { Comfortaa } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
-const staatliches = Staatliches({ subsets: ["latin"], weight: "400" });
+const staatliches = Comfortaa({ subsets: ["latin"], weight: "400" });
 
 const Home: NextPage = () => {
   const [bgClass, setBgClass] = useState("");
-  const firstBg = "bg-gradient-to-br from-pink-400 to-amber-400";
-  const secondBg = "bg-gradient-to-bl from-indigo-600 to-amber-500";
+  const firstBg = "bg-gradient-to-br from-pink-600 to-amber-400 ";
+  const secondBg = "bg-gradient-to-bl from-indigo-600 to-red-500";
   const thirdBg = "bg-gradient-to-bl from-yellow-400 to-teal-400";
   const fourthBg = "bg-gradient-to-bl from-teal-400 to-purple-400";
 
-  const containerClass = `min-h-screen flex flex-col sm:p-8 p-4  ${bgClass}`;
+  const containerClass = `min-h-screen flex flex-col transition  ${bgClass}`;
 
   function handleLinkHover(link: string) {
     console.log("active!");
@@ -35,16 +35,16 @@ const Home: NextPage = () => {
   }
   return (
     <div className={containerClass}>
-      <svg viewBox="0 0 85 18" className="absolute z-10 left-0 fill-red-500">
-        <text x="-4" y="15" className=" italic font-bold">
-          Liam Idrovo
-        </text>
-      </svg>
-      <div className=" grow bg-gradient-to-b from-orange-100/50 to-orange-400/50 flex">
-        <div className="sm:text-base text-3xl flex flex-col mx-auto w-max sm:items-start items-end text-left sm:mt-[25vw] mt-[40vw] sm:justify-center justify-end p-4 sm:grow-0 grow">
+      <div className=" grow bg-gradient-to-b from-orange-100/50 to-orange-500/50 flex flex-col">
+        <svg viewBox="0 0 120 17" className="z-10 left-0 right-0 fill-red-500 ">
+          <text x="0" y="16" className={`${staatliches.className} font-bold`}>
+            LIAM IDROVO
+          </text>
+        </svg>
+        <div className="sm:text-base  flex flex-col sm:block mx-auto w-max  text-left  p-4 sm:grow-0 my-auto sm:my-0 ">
           <a
             href=""
-            className="text-red-500 hover:scale-125  transition   py-2  duration-75 "
+            className="text-red-500   py-2 -ml-4 sm:ml-0"
             onFocus={() => handleLinkHover("developer")}
             onMouseOver={() => handleLinkHover("developer")}
             onBlur={() => handleLinkHover("")}
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           </a>
           <a
             href=""
-            className="text-red-600 hover:scale-125   transition   py-2 duration-100"
+            className="text-red-600  sm:px-1     py-2  "
             onFocus={() => handleLinkHover("musicmaker")}
             onMouseOver={() => handleLinkHover("musicmaker")}
             onBlur={() => handleLinkHover("")}
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           >
             musicmaker
           </a>
-          <a
+          {/* <a
             href=""
             className="text-red-700 hover:scale-125  transition  py-2 duration-100"
             onFocus={() => handleLinkHover("polyglot")}
@@ -71,10 +71,10 @@ const Home: NextPage = () => {
             onMouseLeave={() => handleLinkHover("")}
           >
             polyglot
-          </a>
+          </a> */}
           <a
             href=""
-            className="text-red-800 hover:scale-125  transition  py-2 duration-100"
+            className="text-red-800   py-2 ml-4 sm:ml-0"
             onFocus={() => handleLinkHover("other")}
             onMouseOver={() => handleLinkHover("other")}
             onBlur={() => handleLinkHover("")}
