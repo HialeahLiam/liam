@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Comfortaa } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const staatliches = Comfortaa({ subsets: ["latin"], weight: "400" });
 
 const Home: NextPage = () => {
@@ -12,6 +12,33 @@ const Home: NextPage = () => {
   const fourthBg = "bg-gradient-to-bl from-teal-400 to-purple-400";
 
   const containerClass = `min-h-screen flex flex-col transition  ${bgClass}`;
+  useEffect(() => {
+    let viewportWidth = window.innerWidth;
+    if (viewportWidth >= 640 && bgClass !== "") {
+      setBgClass("");
+      return;
+    }
+    let newClass: string;
+    switch (bgClass) {
+      case firstBg:
+        newClass = secondBg;
+        break;
+      case secondBg:
+        newClass = thirdBg;
+        break;
+      case thirdBg:
+        newClass = fourthBg;
+        break;
+      case fourthBg:
+        newClass = firstBg;
+        break;
+      default:
+        newClass = firstBg;
+    }
+    setTimeout(() => {
+      setBgClass(newClass);
+    }, 1000);
+  });
 
   function handleLinkHover(link: string) {
     console.log("active!");
@@ -41,10 +68,10 @@ const Home: NextPage = () => {
             LIAM IDROVO
           </text>
         </svg>
-        <div className="sm:text-base  flex flex-col sm:block mx-auto w-max  text-left  p-4 sm:grow-0 my-auto sm:my-0 ">
+        <div className="  flex flex-col sm:block mx-auto w-max  p-4 sm:grow-0 my-auto sm:my-0 ">
           <a
             href=""
-            className="text-red-500   py-2 -ml-4 sm:ml-0"
+            className="text-red-500  sm:text-base py-2 -ml-4 sm:ml-0 text-3xl"
             onFocus={() => handleLinkHover("developer")}
             onMouseOver={() => handleLinkHover("developer")}
             onBlur={() => handleLinkHover("")}
@@ -54,7 +81,7 @@ const Home: NextPage = () => {
           </a>
           <a
             href=""
-            className="text-red-600  sm:px-1     py-2  "
+            className="text-red-600 sm:text-base sm:px-1     py-2   text-2xl my-36"
             onFocus={() => handleLinkHover("musicmaker")}
             onMouseOver={() => handleLinkHover("musicmaker")}
             onBlur={() => handleLinkHover("")}
@@ -74,7 +101,7 @@ const Home: NextPage = () => {
           </a> */}
           <a
             href=""
-            className="text-red-800   py-2 ml-4 sm:ml-0"
+            className="text-red-800  sm:text-base py-2 ml-6 sm:ml-0 text-1xl"
             onFocus={() => handleLinkHover("other")}
             onMouseOver={() => handleLinkHover("other")}
             onBlur={() => handleLinkHover("")}
