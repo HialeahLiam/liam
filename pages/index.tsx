@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Comfortaa } from "next/font/google";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 const staatliches = Comfortaa({ subsets: ["latin"], weight: "400" });
 
 const Home: NextPage = () => {
@@ -12,35 +12,38 @@ const Home: NextPage = () => {
   const fourthBg = "bg-gradient-to-bl from-teal-400 to-purple-400";
 
   const containerClass = `min-h-screen flex flex-col transition  ${bgClass}`;
+  const timer = useRef();
+
   useEffect(() => {
-    let viewportWidth = window.innerWidth;
-    if (viewportWidth >= 640 && bgClass !== "") {
-      setBgClass("");
-      return;
+    console.log("check!");
+    const viewportWidth = window.innerWidth;
+    if (viewportWidth < 640) {
+      let newClass: string;
+      switch (bgClass) {
+        case firstBg:
+          newClass = secondBg;
+          break;
+        case secondBg:
+          newClass = thirdBg;
+          break;
+        case thirdBg:
+          newClass = fourthBg;
+          break;
+        case fourthBg:
+          newClass = firstBg;
+          break;
+        default:
+          newClass = firstBg;
+      }
+      setTimeout(() => {
+        console.log("new timeout");
+        setBgClass(newClass);
+      }, 1000);
     }
-    let newClass: string;
-    switch (bgClass) {
-      case firstBg:
-        newClass = secondBg;
-        break;
-      case secondBg:
-        newClass = thirdBg;
-        break;
-      case thirdBg:
-        newClass = fourthBg;
-        break;
-      case fourthBg:
-        newClass = firstBg;
-        break;
-      default:
-        newClass = firstBg;
-    }
-    setTimeout(() => {
-      setBgClass(newClass);
-    }, 1000);
   });
 
   function handleLinkHover(link: string) {
+    if (window.innerWidth < 640) return;
     console.log("active!");
     switch (link) {
       case "developer":
