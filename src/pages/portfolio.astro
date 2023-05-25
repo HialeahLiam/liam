@@ -42,67 +42,72 @@ export const projects = [
         }
       </div>
     </div>
-    <div id="brew-content" class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden">
-      <p class="w-40 font-body text-xs h-32">
-        Text describing the project. More text that describes things.. <br />
-        <br />more text descrbing things, More text. Text describing the
-        project.
-      </p>
-      <div class="row-start-2 col-start-2 col-span-2">
-        <img
-          src={"brew1.png"}
-          alt={"image for Spotify Heatmap app"}
-          class="h-96 w-96 transition-all"
-        />
+    <div class="relative ml-28 pt-36 grow">
+      <div
+        id="brew-content"
+        class="grid grid-cols-3 absolute opacity-0 transition duration-300"
+      >
+        <p class="w-40 font-body text-xs h-32">
+          Text describing the project. More text that describes things.. <br />
+          <br />more text descrbing things, More text. Text describing the
+          project.
+        </p>
+        <div class="row-start-2 col-start-2 col-span-2 h-96 w-96">
+          <img src={"brew1.png"} alt={"image for Spotify Heatmap app"} />
+        </div>
       </div>
-    </div>
-    <div id="podkast-content" class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden">
-      <p class="w-40 font-body text-xs h-32">
-        Text describing the project. More text that describes things.. <br />
-        <br />more text descrbing things, More text. Text describing the
-        project.
-      </p>
-      <div class="row-start-2 col-start-2 col-span-2 ml-24">
-        <img
-          src={"podkast1.png"}
-          alt={"image for Spotify Heatmap app"}
-          class="h-96 mx-auto rounded-lg"
-        />
+      <div
+        id="podkast-content"
+        class="grid grid-cols-3 absolute opacity-0 transition duration-300"
+      >
+        <p class="w-40 font-body text-xs h-32">
+          Text describing the project.About specifically spotify heatmap More
+          text that describes things.. <br />
+          <br />more text descrbing things, More text. Text describing the
+          project.
+        </p>
+        <div class="row-start-2 col-start-2 col-span-2 h-96 w-96">
+          <img
+            src={"podkast1.png"}
+            alt={"image for Spotify Heatmap app"}
+            class="h-96 mx-auto rounded-lg"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      id="spotify-heatmap-content"
-      class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden"
-    >
-      <p class="w-40 font-body text-xs h-32">
-        Text describing the project. More text that describes things.. <br />
-        <br />more text descrbing things, More text. Text describing the
-        project.
-      </p>
-      <div class="row-start-2 col-start-2 col-span-2">
-        <img
-          src={"spotify-heatmap1.png"}
-          alt={"image for Spotify Heatmap app"}
-          class="h-96 w-96"
-        />
+      <div
+        id="spotify-heatmap-content"
+        class="grid grid-cols-3 absolute opacity-0 transition duration-300"
+      >
+        <p class="w-40 font-body text-xs h-32">
+          Text describing the project. More text that describes things.. <br />
+          <br />more text descrbing things, More text. Text describing the
+          project.
+        </p>
+        <div class="row-start-2 col-start-2 col-span-2 h-96 w-96">
+          <img
+            src={"spotify-heatmap1.png"}
+            alt={"image for Spotify Heatmap app"}
+          />
+        </div>
       </div>
-    </div>
-    <div
-      id="capgemini-content"
-      class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden"
-    >
-      <p class="w-40 font-body text-xs h-32">
-        Text describing the project. More text that describes things.. <br />
-        <br />more text descrbing things, More text. Text describing the
-        project.
-      </p>
-      <!-- <div class="row-start-2 col-start-2 col-span-2">
-        <img
-          src={"src/assets/spotify-heatmap1.png"}
-          alt={"image for Spotify Heatmap app"}
-          class="h-96 w-96"
-        />
-      </div> -->
+      <div
+        id="capgemini-content"
+        class="grid grid-cols-3 absolute opacity-0 transition duration-300"
+      >
+        <p class="w-40 font-body text-xs h-32">
+          Text describing my work expeirnece with Capgemini. More text that
+          describes things.. <br />
+          <br />more text descrbing things, More text. Text describing the
+          project.
+        </p>
+        <!-- <div class="row-start-2 col-start-2 col-span-2">
+          <img
+            src={"src/assets/spotify-heatmap1.png"}
+            alt={"image for Spotify Heatmap app"}
+            class="h-96 w-96"
+          />
+        </div> -->
+      </div>
     </div>
   </div>
 
@@ -147,10 +152,12 @@ export const projects = [
       console.log(content);
       // console.log(spotifyHeatmapButton);
       button?.addEventListener("mouseenter", () => {
-        content?.classList.remove("hidden");
+        // content?.classList.remove("hidden");
+        // content?.classList.replace("opacity-0", "opacity-100");
+        content?.classList.add("opacity-100");
       });
       button?.addEventListener("mouseleave", () => {
-        content?.classList.add("hidden");
+        content?.classList.remove("opacity-100");
       });
     });
   </script>

@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         brightOrange: "#FF470A",
         mildOrange: "#D14836",
+        darkOrange: "#270B07",
       },
       fontFamily: {
         sans: ['"Helvetica Neue"', ...defaultTheme.fontFamily.sans],
