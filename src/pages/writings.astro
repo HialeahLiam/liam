@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import spotifyHeatmapImage from "../assets/spotify-heatmap1.png";
+import brewImage from "../assets/brew1.png";
+import Main from "../layouts/main.astro";
+
+export const projects = [
+  {
+    id: "brew",
+    label: "Brew.fm",
+  },
+  {
+    id: "podkast",
+    label: "Podkast",
+  },
+  {
+    id: "spotify-heatmap",
+    label: "Spotify HeatMap",
+  },
+  {
+    id: "capgemini",
+    label: "Capgemini",
+  },
+];
+---
+
+<Main>
+  <div>
+    <div class="mb-32">
+      <h1 class="text-6xl mb-4">WRITINGS</h1>
+    </div>
+    <div class="grid grid-cols-3 gap-y-6">
+      <div class="col-start-2 peer">
+        <a href="" class="text-2xl">SOFTWARE DEVELPMENT IS A SPORT</a>
+      </div>
+      <div
+        class="flex items-center peer-hover:opacity-100 opacity-0 transition"
+      >
+        <div class="bg-black h-[1px] w-24 mr-4"></div>
+        <div class="flex gap-2">
+          <span class="text-lg font-light italic">12</span>
+          <span class="text-lg font-light italic">/</span>
+          <span class="text-lg font-light italic">03</span>
+          <span class="text-lg font-light italic">/</span>
+          <span class="text-lg font-light italic">23</span>
+        </div>
+      </div>
+      <div class="col-start-2">
+        <a href="" class="text-2xl">BEWARE OF THE DEVELOPMENT MUD</a>
+      </div>
+    </div>
+  </div>
+  <script></script>
+</Main>

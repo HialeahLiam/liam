@@ -1,7 +1,157 @@
 ---
+import { Image } from "astro:assets";
+import spotifyHeatmapImage from "../assets/spotify-heatmap1.png";
+import brewImage from "../assets/brew1.png";
 import Main from "../layouts/main.astro";
+
+export const projects = [
+  {
+    id: "brew",
+    label: "Brew.fm",
+  },
+  {
+    id: "podkast",
+    label: "Podkast",
+  },
+  {
+    id: "spotify-heatmap",
+    label: "Spotify HeatMap",
+  },
+  {
+    id: "capgemini",
+    label: "Capgemini",
+  },
+];
 ---
 
 <Main>
-  <h1 class="text-6xl">PORTFOLIO</h1>
+  <div class="flex">
+    <div class="w-fit">
+      <h1 class="text-6xl mb-4">PORTFOLIO</h1>
+      <div class="border-t-2 border-black flex flex-col items-start">
+        {
+          projects.map((project) => (
+            <a
+              href={`/portfolio/${project.id}`}
+              id={project.id}
+              class="project border-b-2 border-black w-full hover:bg-mildOrange flex"
+            >
+              <span class="ml-10 text-3xl">{project.label}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div id="brew-content" class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden">
+      <p class="w-40 font-body text-xs h-32">
+        Text describing the project. More text that describes things.. <br />
+        <br />more text descrbing things, More text. Text describing the
+        project.
+      </p>
+      <div class="row-start-2 col-start-2 col-span-2">
+        <img
+          src={"src/assets/brew1.png"}
+          alt={"image for Spotify Heatmap app"}
+          class="h-96 w-96 transition-all"
+        />
+      </div>
+    </div>
+    <div id="podkast-content" class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden">
+      <p class="w-40 font-body text-xs h-32">
+        Text describing the project. More text that describes things.. <br />
+        <br />more text descrbing things, More text. Text describing the
+        project.
+      </p>
+      <div class="row-start-2 col-start-2 col-span-2 ml-24">
+        <img
+          src={"src/assets/podkast1.png"}
+          alt={"image for Spotify Heatmap app"}
+          class="h-96 mx-auto rounded-lg"
+        />
+      </div>
+    </div>
+    <div
+      id="spotify-heatmap-content"
+      class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden"
+    >
+      <p class="w-40 font-body text-xs h-32">
+        Text describing the project. More text that describes things.. <br />
+        <br />more text descrbing things, More text. Text describing the
+        project.
+      </p>
+      <div class="row-start-2 col-start-2 col-span-2">
+        <img
+          src={"src/assets/spotify-heatmap1.png"}
+          alt={"image for Spotify Heatmap app"}
+          class="h-96 w-96"
+        />
+      </div>
+    </div>
+    <div
+      id="capgemini-content"
+      class="grid grid-cols-3 mr-28 ml-28 pt-36 hidden"
+    >
+      <p class="w-40 font-body text-xs h-32">
+        Text describing the project. More text that describes things.. <br />
+        <br />more text descrbing things, More text. Text describing the
+        project.
+      </p>
+      <!-- <div class="row-start-2 col-start-2 col-span-2">
+        <img
+          src={"src/assets/spotify-heatmap1.png"}
+          alt={"image for Spotify Heatmap app"}
+          class="h-96 w-96"
+        />
+      </div> -->
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        id: "brew",
+        label: "Brew.fm",
+      },
+      {
+        id: "podkast",
+        label: "Podkast",
+      },
+      {
+        id: "spotify-heatmap",
+        label: "Spotify HeatMap",
+      },
+      {
+        id: "capgemini",
+        label: "Capgemini",
+      },
+    ];
+
+    // projects.forEach((project) => {
+    //   const spotifyHeatmapButton = document.querySelector("#spotify-heatmap");
+    //   const spotifyHeatmapContent = document.querySelector(
+    //     "#spotify-heatmap-content"
+    //   );
+    //   console.log(spotifyHeatmapButton);
+    //   spotifyHeatmapButton?.addEventListener("mouseenter", () => {
+    //     spotifyHeatmapContent?.classList.remove("hidden");
+    //   });
+    //   spotifyHeatmapButton?.addEventListener("mouseleave", () => {
+    //     spotifyHeatmapContent?.classList.add("hidden");
+    //   });
+    // });
+
+    document.querySelectorAll(".project").forEach((button) => {
+      const content = document.querySelector(`#${button.id}-content`);
+      const image = document.querySelector(`#${button.id}-content img`);
+      console.log(image);
+      console.log(content);
+      // console.log(spotifyHeatmapButton);
+      button?.addEventListener("mouseenter", () => {
+        content?.classList.remove("hidden");
+      });
+      button?.addEventListener("mouseleave", () => {
+        content?.classList.add("hidden");
+      });
+    });
+  </script>
 </Main>

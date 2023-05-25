@@ -1,0 +1,84 @@
+---
+import Project from "../../layouts/project.astro";
+import { projects } from "../portfolio.astro";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { project: project.id },
+  }));
+}
+
+const { project } = Astro.params;
+---
+
+<Project>
+  <div class="grid grid-cols-2">
+    <div class="min-h-screen bg-neutral-950">hello</div>
+    <div class="min-h-screen py-12">
+      <div class="flex justify-between items-center px-12 mb-16">
+        <h1 class="text-white text-4xl font-body">Brew.fm</h1>
+        <a href="/portfolio">
+          <svg
+            width="34"
+            height="33"
+            viewBox="0 0 34 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="1.35355"
+              y1="0.646447"
+              x2="32.8575"
+              y2="32.1504"
+              stroke="black"></line>
+            <line
+              x1="0.646447"
+              y1="32.1504"
+              x2="32.1504"
+              y2="0.646387"
+              stroke="black"></line>
+          </svg>
+        </a>
+      </div>
+      <div class="grid grid-cols-4">
+        <div class="col-span-3 font-body text-sm pl-12 pr-8">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            posuere, odio et suscipit pharetra, erat tortor efficitur sapien,
+            vel gravida urna orci non magna. Vestibulum nec risus sed nisi
+            sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac
+            consequat turpis. Integer sapien velit, bibendum vel purus eu,
+            congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper.
+            Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl.
+            In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien
+            molestie volutpat. Sed et urna efficitur, bibendum erat sit amet,
+            vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed
+            nunc ac velit congue commodo.
+          </p>
+        </div>
+        <div class="border-t border-black flex flex-col items-start font-body">
+          <button
+            class="project border-b border-black w-full hover:bg-mildOrange flex"
+          >
+            <span class="text-1xl py-4">Chapter</span>
+          </button>
+          <button
+            class="project border-b border-black w-full hover:bg-mildOrange flex"
+          >
+            <span class="text-1xl py-4">Chapter</span>
+          </button>
+          <button
+            class="project border-b border-black w-full hover:bg-mildOrange flex"
+          >
+            <span class="text-1xl py-4">Chapter</span>
+          </button>
+          <button
+            class="project border-b border-black w-full hover:bg-mildOrange flex"
+          >
+            <span class="text-1xl py-4">Chapter</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Project>
