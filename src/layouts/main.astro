@@ -1,15 +1,29 @@
 ---
-const { content } = Astro.props;
+import Contact from "../components/Contact.astro";
+import Nav from "../components/Nav.astro";
+import "@fontsource-variable/josefin-sans";
+
+const { title = "Liam Idrovo", navHidden = false } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="bg-brightOrange min-h-screen pb-12 py-6 font px-12">
+      <slot />
+      <Contact />
+      {
+        !navHidden && (
+          <div class="absolute right-8 top-8">
+            <Nav />
+          </div>
+        )
+      }
+    </div>
+  </body>
 </html>

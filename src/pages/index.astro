@@ -1,24 +1,47 @@
 ---
 // Component Imports
-import Button from '../components/Button.astro';
+// import Button from '../components/Button.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+
+// Supports weights 100-700
+import Main from "../layouts/main.astro";
+const text = `
+This will be my small little intro where I explain that I am a software engineer. 
+
+I will describe what value I can provide. 
+
+I will also mention my interests and what you can expect from this site.
+`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+<Main navHidden="true">
+  <div class="flex h-full">
+    <div class="flex flex-col w-fit">
+      <h1 class="text-6xl">LIAM</h1>
+      <h1 class="ml-20 text-6xl">IDROVO</h1>
+      <h1 class="text-4xl text-white">says hi</h1>
+      <p
+        class="ml-20 font-body w-48 text-xs whitespace-break-spaces tracking-tight"
+      >
+        {text}
+      </p>
+    </div>
+    <div class="flex grow justify-center">
+      <div class="h-[30rem] w-[28rem] mt-32 relative text-xs font-body">
+        <a
+          href="/portfolio"
+          class="border-black border aspect-square w-5/12 flex justify-center items-center hover:w-7/12 transition-all hover:bg-mildOrange z-20 absolute"
+        >
+          <span>If you want to work with me</span>
+        </a>
+        <a
+          class="border-black border aspect-square w-7/12 bottom-0 right-0 absolute flex justify-center items-center hover:w-9/12 transition-all hover:bg-mildOrange hover:z-10 z-20"
+        >
+          <span>If you want to get to know me</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</Main>
