@@ -66,7 +66,7 @@ const projectContent = project
         </a>
       </div>
       <div class="grid grid-cols-4">
-        <div class="col-span-3 font-body text-sm pl-12 pr-8 space-y-12">
+        <div class="col-span-3 font-body tracking-tight pl-12 pr-8 space-y-12">
           {
             projectContent?.data.paragraphs?.map((paragraph) => {
               if (paragraph.anchorNumber) {
@@ -185,6 +185,7 @@ const projectContent = project
           </button>
         </div> -->
       </div>
+      <div id="content-footer"></div>
     </div>
   </div>
 </Project>
@@ -201,6 +202,11 @@ const projectContent = project
 
   const contentAnchors = document.querySelectorAll(".content-anchor");
   const contentWindow = document.querySelector("#content-window");
+  const contentFooter = document.querySelector("#content-footer");
+
+  // should be at least opposite of each other to ensure all anchor text reaches reveal point
+  contentFooter.classList.add("h-3/4");
+  const revealProportion = 1 / 4;
 
   const reveal = () => {
     console.log("\n");
@@ -208,7 +214,6 @@ const projectContent = project
     contentAnchors.forEach((anchor) => {
       const top = anchor.getBoundingClientRect().top;
 
-      const revealProportion = 1 / 2;
       if (window.innerHeight * revealProportion >= top) {
         console.log("revealed");
         revealId = anchor.getAttribute("data-anchor-number") || "-1";
