@@ -33,12 +33,15 @@
     closed?.classList.add("hidden");
     opened?.classList.add("flex");
   };
-  const close = () => {
-    const closed = document.querySelector("#closed-content");
-    const opened = document.querySelector("#open-content");
-    closed?.classList.remove("hidden");
-    opened?.classList.remove("flex");
+  const close = (e) => {
+    if (!contact?.contains(e.target)) {
+      const closed = document.querySelector("#closed-content");
+      const opened = document.querySelector("#open-content");
+      closed?.classList.remove("hidden");
+      opened?.classList.remove("flex");
+      document.removeEventListener("touchstart", (e) => close(e));
+    }
   };
   contact?.addEventListener("touchend", open);
-  contact?.addEventListener("focusout", close);
+  document.addEventListener("touchstart", (e) => close(e));
 </script>
