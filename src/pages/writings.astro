@@ -25,18 +25,20 @@ export const projects = [
 ---
 
 <Main>
-  <div>
-    <div class="mb-32">
+  <div class="mt-16 sm:mt-0">
+    <div class="md:mb-32 mb-20">
       <h1 class="text-6xl mb-4">WRITINGS</h1>
     </div>
     <div class="grid grid-cols-3 gap-y-6">
-      <div class="col-start-2 peer">
+      <div
+        class="lg:col-start-2 lg:col-span-1 sm:col-span-2 col-span-3 pl-16 md:pl-0 peer/sport"
+      >
         <a href="/writings/software development is a sport" class="text-2xl"
           >SOFTWARE DEVELPMENT IS A SPORT</a
         >
       </div>
       <div
-        class="flex items-center peer-hover:opacity-100 opacity-0 transition"
+        class="sm:flex items-center peer-hover/sport:opacity-100 opacity-0 transition hidden"
       >
         <div class="bg-black h-[1px] w-24 mr-4"></div>
         <div class="flex gap-2">
@@ -47,8 +49,24 @@ export const projects = [
           <span class="text-lg font-light italic">23</span>
         </div>
       </div>
-      <div class="col-start-2">
-        <a href="" class="text-2xl">BEWARE OF THE DEVELOPMENT MUD</a>
+      <div
+        class="lg:col-start-2 lg:col-span-1 sm:col-span-2 col-span-3 pl-16 md:pl-0 peer/mud"
+      >
+        <a href="/writings/software development is a sport" class="text-2xl"
+          >BEWARE OF THE DEVELOPMENT MUD</a
+        >
+      </div>
+      <div
+        class="sm:flex items-center peer-hover/mud:opacity-100 opacity-0 transition hidden"
+      >
+        <div class="bg-black h-[1px] w-24 mr-4"></div>
+        <div class="flex gap-2">
+          <span class="text-lg font-light italic">12</span>
+          <span class="text-lg font-light italic">/</span>
+          <span class="text-lg font-light italic">03</span>
+          <span class="text-lg font-light italic">/</span>
+          <span class="text-lg font-light italic">23</span>
+        </div>
       </div>
     </div>
   </div>
