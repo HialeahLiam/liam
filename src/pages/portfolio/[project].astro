@@ -23,7 +23,7 @@ const projectContent = project
     >
       <div
         id="revealed-content-container"
-        class="-translate-x-56 transition duration-1000 opacity-0"
+        class="-translate-x-56 transition duration-1000 opacity-0  w-full h-full"
       >
         {
           (() => {
@@ -150,7 +150,7 @@ const projectContent = project
   const mobileContainers = document.querySelectorAll(".reveal-container");
 
   for (let child of revealContainer.children) {
-    child.classList.add("revealed-content", "opacity-0", "transition");
+    child.classList.add("revealed-content", "opacity-0", "transition", "absolute", "inset-0");
   }
 
   // for (let container of mobileContainers) {
