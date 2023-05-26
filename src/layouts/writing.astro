@@ -2,6 +2,8 @@
 import "@fontsource-variable/josefin-sans";
 
 const { title = "Liam Idrovo", navHidden = false } = Astro.props;
+
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,7 +14,43 @@ const { title = "Liam Idrovo", navHidden = false } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="min-h-screen bg-darkOrange text-white sm:p-12 p-4">
+      <div class="relative grid gap-y-8 mb-12">
+        <h1 class="text-2xl text-center pr-6">
+          {frontmatter?.title.toUpperCase()}
+        </h1>
+        <a
+          href="/writings"
+          class="sm:absolute right-0 top-0 row-start-1 justify-self-end"
+        >
+          <svg
+            width="34"
+            height="33"
+            viewBox="0 0 34 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="1.35355"
+              y1="0.646447"
+              x2="32.8575"
+              y2="32.1504"
+              stroke="white"></line>
+            <line
+              x1="0.646447"
+              y1="32.1504"
+              x2="32.1504"
+              y2="0.646387"
+              stroke="white"></line>
+          </svg>
+        </a>
+      </div>
+      <div
+        class="mx-auto font-body text-sm text-white text-opacity-80 sm:w-96 space-y-8"
+      >
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
 
