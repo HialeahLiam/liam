@@ -1,3 +1,4 @@
+projectName: Brew.fm
 paragraphs:
   - text: >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere, odio et suscipit pharetra, erat tortor efficitur sapien, vel gravida urna orci non magna. Vestibulum nec risus sed nisi sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac consequat turpis. Integer sapien velit, bibendum vel purus eu, congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper. Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl. In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien molestie volutpat. Sed et urna efficitur, bibendum erat sit amet, vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed nunc ac velit congue commodo.
@@ -5,17 +6,7 @@ paragraphs:
   - text: >
       Sed varius pharetra nunc varius faucibus. Nam tempus vel augue in egestas. Nunc molestie nisi ut tortor dignissim feugiat nec nec lectus. Curabitur convallis, est sed finibus pharetra, sem felis aliquam erat, sed egestas elit turpis non ipsum. Nulla molestie odio enim, ac malesuada nulla tempor in. Donec commodo leo quis eleifend mollis. Phasellus aliquet molestie mauris non porta. Sed mattis sem ornare sodales sagittis. Suspendisse ac libero at justo porttitor faucibus. Nullam at ex ipsum. Nunc leo leo, lacinia eu lorem eu, tristique laoreet enim. Ut leo est, varius sed volutpat quis, blandit efficitur massa. Nunc dictum velit a elit venenatis fermentum.
   - text: >
-      Morbi non ultrices orci. Pellentesque congue rhoncus velit, at
-            fringilla dolor sollicitudin vel. Vestibulum at leo nisi. Aenean
-            laoreet dolor justo, vitae malesuada risus pharetra vitae. Praesent
-            tempus nunc risus, id scelerisque tellus sagittis sit amet. Aliquam
-            elementum pretium quam non sagittis. Suspendisse potenti. Mauris
-            efficitur mollis quam, at pretium sem. Etiam tempus dolor eget
-            consectetur sodales. Nulla varius dolor felis, eget imperdiet erat
-            venenatis nec. Quisque ornare placerat turpis, nec scelerisque ipsum
-            lacinia sed. In rhoncus dignissim magna feugiat vestibulum. Aenean
-            sed orci a libero egestas malesuada vitae in nunc. Nam ut maximus
-            purus. Fusce hendrerit varius sollicitudin.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere, odio et suscipit pharetra, erat tortor efficitur sapien, vel gravida urna orci non magna. Vestibulum nec risus sed nisi sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac consequat turpis. Integer sapien velit, bibendum vel purus eu, congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper. Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl. In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien molestie volutpat. Sed et urna efficitur, bibendum erat sit amet, vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed nunc ac velit congue commodo.
     anchorNumber: 2
   - text: >
       Nullam auctor tempus nisl ut commodo. Cras sed ipsum sed lectus

@@ -1,4 +1,5 @@
 ---
+import BrewRevealed from "../../components/revealedComponents/BrewRevealed.astro";
 import Project from "../../layouts/project.astro";
 import { projects } from "../portfolio.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -8,12 +9,11 @@ export async function getStaticPaths() {
     params: { project: project.id },
   }));
 }
-
-const projectContent = await getEntry("projects", "brew");
-console.log({ projectContent });
-const contentParagraphs = projectContent.data.paragraphs;
-
 const { project } = Astro.params;
+
+const projectContent = project
+  ? await getEntry("projects", project)
+  : undefined;
 ---
 
 <Project>
@@ -22,21 +22,26 @@ const { project } = Astro.params;
       class="min-h-screen bg-neutral-950 text-white flex items-center justify-center"
     >
       <div
-        class="revealed-content opacity-100 transition"
-        data-anchor-number="1"
+        id="revealed-content-container"
+        class="-translate-x-56 transition duration-1000 opacity-0"
       >
-        first
+        {
+          (() => {
+            switch (project) {
+              case "brew":
+                return <BrewRevealed />;
+              default:
+                break;
+            }
+          })()
+        }
       </div>
-      <span class="revealed-content opacity-0 transition" data-anchor-number="2"
-        >second</span
-      >
-      <span class="revealed-content opacity-0 transition" data-anchor-number="3"
-        >third</span
-      >
     </div>
     <div id="content-window" class="h-screen py-12 overflow-y-scroll">
       <div class="flex justify-between items-center px-12 mb-16">
-        <h1 class="text-white text-4xl font-body">Brew.fm</h1>
+        <h1 class="text-white text-4xl font-body">
+          {projectContent?.data.projectName}
+        </h1>
         <a href="/portfolio">
           <svg
             width="34"
@@ -63,7 +68,7 @@ const { project } = Astro.params;
       <div class="grid grid-cols-4">
         <div class="col-span-3 font-body text-sm pl-12 pr-8 space-y-12">
           {
-            contentParagraphs.map((paragraph) => {
+            projectContent?.data.paragraphs?.map((paragraph) => {
               if (paragraph.anchorNumber) {
                 return (
                   <p
@@ -184,10 +189,20 @@ const { project } = Astro.params;
   </div>
 </Project>
 
-<script>
+<script defer="true">
+  const revealContainer = document.querySelector("#revealed-content-container");
+
+  for (let child of revealContainer.children) {
+    child.classList.add("revealed-content", "opacity-0", "transition");
+  }
+  // revealContainer.children.forEach((child) => {
+  //   console.log({ child });
+  // });
+
   const contentAnchors = document.querySelectorAll(".content-anchor");
   const contentWindow = document.querySelector("#content-window");
-  contentWindow?.addEventListener("scroll", () => {
+
+  const reveal = () => {
     console.log("\n");
     let revealId = "-1";
     contentAnchors.forEach((anchor) => {
@@ -212,13 +227,12 @@ const { project } = Astro.params;
         element.classList.replace("opacity-100", "opacity-0");
       }
     });
-    const revealedElement = document.querySelector(
-      `span[data-anchor-number="${revealId}"]`
-    );
+  };
 
-    if (revealedElement?.classList.contains("opacity-0")) {
-      revealedElement?.classList.replace("opacity-0", "opacity-100");
-    }
-    console.log(revealedElement);
-  });
+  contentWindow?.addEventListener("scroll", reveal);
+  reveal();
+
+  setTimeout(() => {
+    revealContainer.classList.add("translate-x-0", "opacity-100");
+  }, 500);
 </script>
