@@ -17,9 +17,9 @@ const projectContent = project
 ---
 
 <Project>
-  <div class="grid grid-cols-2">
+  <div class="grid sm:grid-cols-2">
     <div
-      class="min-h-screen bg-neutral-950 text-white flex items-center justify-center"
+      class="min-h-screen bg-neutral-950 text-white sm:flex items-center justify-center hidden"
     >
       <div
         id="revealed-content-container"
@@ -71,95 +71,26 @@ const projectContent = project
             projectContent?.data.paragraphs?.map((paragraph) => {
               if (paragraph.anchorNumber) {
                 return (
-                  <p
-                    class="content-anchor"
-                    data-anchor-number={`${paragraph.anchorNumber}`}
-                  >
-                    {paragraph.text}
-                  </p>
+                  <>
+                    <p
+                      class="content-anchor"
+                      data-anchor-number={`${paragraph.anchorNumber}`}
+                    >
+                      {paragraph.text}
+                    </p>
+
+                    <div
+                      class="reveal-container transition duration-1000 opacity-0 -translate-x-56  sm:hidden"
+                      data-anchor-number={`${paragraph.anchorNumber}`}
+                    >
+                      <BrewRevealed reveal={paragraph.anchorNumber} />
+                    </div>
+                  </>
                 );
               }
               return <p>{paragraph.text}</p>;
             })
           }
-          <!-- <p class="content-anchor" data-anchor-number="1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            posuere, odio et suscipit pharetra, erat tortor efficitur sapien,
-            vel gravida urna orci non magna. Vestibulum nec risus sed nisi
-            sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac
-            consequat turpis. Integer sapien velit, bibendum vel purus eu,
-            congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper.
-            Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl.
-            In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien
-            molestie volutpat. Sed et urna efficitur, bibendum erat sit amet,
-            vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed
-            nunc ac velit congue commodo.
-          </p>
-          <p>
-            Sed varius pharetra nunc varius faucibus. Nam tempus vel augue in
-            egestas. Nunc molestie nisi ut tortor dignissim feugiat nec nec
-            lectus. Curabitur convallis, est sed finibus pharetra, sem felis
-            aliquam erat, sed egestas elit turpis non ipsum. Nulla molestie odio
-            enim, ac malesuada nulla tempor in. Donec commodo leo quis eleifend
-            mollis. Phasellus aliquet molestie mauris non porta. Sed mattis sem
-            ornare sodales sagittis. Suspendisse ac libero at justo porttitor
-            faucibus. Nullam at ex ipsum. Nunc leo leo, lacinia eu lorem eu,
-            tristique laoreet enim. Ut leo est, varius sed volutpat quis,
-            blandit efficitur massa. Nunc dictum velit a elit venenatis
-            fermentum.
-          </p>
-          <p class="content-anchor" data-anchor-number="2">
-            Morbi non ultrices orci. Pellentesque congue rhoncus velit, at
-            fringilla dolor sollicitudin vel. Vestibulum at leo nisi. Aenean
-            laoreet dolor justo, vitae malesuada risus pharetra vitae. Praesent
-            tempus nunc risus, id scelerisque tellus sagittis sit amet. Aliquam
-            elementum pretium quam non sagittis. Suspendisse potenti. Mauris
-            efficitur mollis quam, at pretium sem. Etiam tempus dolor eget
-            consectetur sodales. Nulla varius dolor felis, eget imperdiet erat
-            venenatis nec. Quisque ornare placerat turpis, nec scelerisque ipsum
-            lacinia sed. In rhoncus dignissim magna feugiat vestibulum. Aenean
-            sed orci a libero egestas malesuada vitae in nunc. Nam ut maximus
-            purus. Fusce hendrerit varius sollicitudin.
-          </p>
-          <p>
-            Nullam auctor tempus nisl ut commodo. Cras sed ipsum sed lectus
-            malesuada pellentesque vulputate vitae odio. Morbi luctus id eros
-            non congue. Donec id eros mollis, placerat mauris nec, rutrum neque.
-            Pellentesque varius arcu ut sem aliquet pretium. Maecenas sed leo
-            ultrices, suscipit felis in, bibendum est. Vestibulum ante ipsum
-            primis in faucibus orci luctus et ultrices posuere cubilia curae;
-            Suspendisse potenti. Sed vitae neque viverra, sollicitudin lectus
-            in, elementum diam. Pellentesque gravida, metus vel pharetra
-            ullamcorper, leo tellus elementum nulla, quis lacinia massa libero
-            vitae eros. Maecenas interdum gravida nulla, id elementum arcu
-            varius ut. Etiam id maximus nunc, in molestie enim. Praesent finibus
-            hendrerit lobortis. Vivamus scelerisque enim et eros ultrices, quis
-            ultrices urna ultricies. Aenean sodales tempor malesuada.
-          </p>
-          <p class="content-anchor" data-anchor-number="3">
-            Mauris quis sem non purus tincidunt mattis. Fusce elit sem, finibus
-            eu ante vel, sollicitudin rutrum nibh. Fusce posuere, turpis et
-            varius consequat, velit massa faucibus lacus, ut convallis mauris
-            ligula non sapien. Donec vitae eros velit. In eu metus justo.
-            Integer ut sem vel arcu venenatis luctus. Vestibulum commodo iaculis
-            risus a tincidunt.
-          </p>
-          <p>
-            Donec quis quam non lacus fermentum pulvinar. In lobortis tortor at
-            nunc convallis venenatis. Mauris in augue ac velit consequat luctus
-            ut ac mi. Vestibulum sit amet arcu non mauris dictum ultricies. Cras
-            at interdum nulla, a tristique magna. Aenean sollicitudin, magna ut
-            rhoncus bibendum, enim enim vestibulum libero, non porta ipsum erat
-            eget risus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. In sed sapien eu metus porta
-            vestibulum. Sed euismod libero et quam pellentesque, vel rutrum nisi
-            venenatis. In hac habitasse platea dictumst. Donec efficitur, orci
-            id pretium convallis, urna nulla posuere neque, vel elementum dolor
-            lacus vel nunc. Quisque magna ex, auctor id velit et, aliquet
-            efficitur nisi. Aliquam eu molestie augue, vitae porta augue. Aenean
-            sagittis dui vitae congue hendrerit. Praesent vitae posuere odio.
-            Integer magna nisl, aliquet sit amet porta quis, congue eget enim.
-          </p> -->
         </div>
         <!-- Chapter selection -->
         <!-- <div class="border-t border-black flex flex-col items-start font-body">
@@ -193,9 +124,19 @@ const projectContent = project
 <script defer="true">
   const revealContainer = document.querySelector("#revealed-content-container");
 
+  const mobileContainers = document.querySelectorAll(".reveal-container");
+
   for (let child of revealContainer.children) {
     child.classList.add("revealed-content", "opacity-0", "transition");
   }
+
+  // for (let container of mobileContainers) {
+  //   for (let child of container.children) {
+  //     child.classList.add("revealed-content-mobile", "opacity-0", "transition");
+  //   }
+  // }
+
+  console.log({ mobileContainers });
   // revealContainer.children.forEach((child) => {
   //   console.log({ child });
   // });
@@ -223,6 +164,10 @@ const projectContent = project
     console.log(revealId);
 
     const revealableElements = document.querySelectorAll(".revealed-content");
+    // const revealableElementsMobile = document.querySelectorAll(
+    //   ".revealed-content-mobile"
+    // );
+    console.log({ revealableElements });
     revealableElements.forEach((element) => {
       if (element.getAttribute("data-anchor-number") === revealId) {
         // reveal
@@ -230,6 +175,13 @@ const projectContent = project
       } else {
         //hide
         element.classList.replace("opacity-100", "opacity-0");
+      }
+    });
+    mobileContainers.forEach((container) => {
+      if (container.getAttribute("data-anchor-number") === revealId) {
+        // reveal
+        container.classList.replace("opacity-0", "opacity-100");
+        container.classList.add("translate-x-0");
       }
     });
   };

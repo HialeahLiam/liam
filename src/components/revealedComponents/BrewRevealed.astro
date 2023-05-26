@@ -1,6 +1,7 @@
 ---
+const { reveal } = Astro.props;
 ---
 
-<div data-anchor-number="1">first</div>
-<div data-anchor-number="2">second</div>
-<div data-anchor-number="3">third</div>
+{(!reveal || reveal === 1) && <div data-anchor-number="1">first</div>}
+{(!reveal || reveal === 2) && <div data-anchor-number="2">second</div>}
+{(!reveal || reveal === 3) && <div data-anchor-number="3">third</div>}
