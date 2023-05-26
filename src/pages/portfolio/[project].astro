@@ -38,7 +38,7 @@ const projectContent = project
       </div>
     </div>
     <div id="content-window" class="h-screen py-12 overflow-y-scroll">
-      <div class="flex justify-between items-center px-12 mb-16">
+      <div class="flex justify-between items-center sm:px-12 px-8 mb-16">
         <h1 class="text-white text-4xl font-body">
           {projectContent?.data.projectName}
         </h1>
@@ -65,8 +65,10 @@ const projectContent = project
           </svg>
         </a>
       </div>
-      <div class="grid grid-cols-4">
-        <div class="col-span-3 font-body tracking-tight pl-12 pr-8 space-y-12">
+      <div class="grid sm:grid-cols-4">
+        <div
+          class="col-span-3 font-body text-sm sm:text-base tracking-tight sm:pl-12 sm:pr-8 px-8 space-y-12"
+        >
           {
             projectContent?.data.paragraphs?.map((paragraph) => {
               if (paragraph.anchorNumber) {
