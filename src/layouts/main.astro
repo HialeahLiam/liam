@@ -13,9 +13,9 @@ const { title = "Liam Idrovo", navHidden = false } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="overflow-y-hidden md:overflow-y-auto">
+  <body>
     <div
-      class="bg-brightOrange min-h-screen md:pb-12 md:py-6 py-3 font md:px-12 px-6"
+      class="bg-brightOrange absolute inset-0 md:pb-12 md:py-6 py-3 font md:px-12 px-6"
     >
       <slot />
       <Contact />
