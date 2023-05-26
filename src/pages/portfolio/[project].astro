@@ -1,6 +1,7 @@
 ---
 import Project from "../../layouts/project.astro";
 import { projects } from "../portfolio.astro";
+import { getCollection, getEntry } from "astro:content";
 
 export async function getStaticPaths() {
   return projects.map((project) => ({
@@ -8,13 +9,32 @@ export async function getStaticPaths() {
   }));
 }
 
+const projectContent = await getEntry("projects", "brew");
+console.log({ projectContent });
+const contentParagraphs = projectContent.data.paragraphs;
+
 const { project } = Astro.params;
 ---
 
 <Project>
   <div class="grid grid-cols-2">
-    <div class="min-h-screen bg-neutral-950">hello</div>
-    <div class="min-h-screen py-12">
+    <div
+      class="min-h-screen bg-neutral-950 text-white flex items-center justify-center"
+    >
+      <div
+        class="revealed-content opacity-100 transition"
+        data-anchor-number="1"
+      >
+        first
+      </div>
+      <span class="revealed-content opacity-0 transition" data-anchor-number="2"
+        >second</span
+      >
+      <span class="revealed-content opacity-0 transition" data-anchor-number="3"
+        >third</span
+      >
+    </div>
+    <div id="content-window" class="h-screen py-12 overflow-y-scroll">
       <div class="flex justify-between items-center px-12 mb-16">
         <h1 class="text-white text-4xl font-body">Brew.fm</h1>
         <a href="/portfolio">
@@ -41,8 +61,23 @@ const { project } = Astro.params;
         </a>
       </div>
       <div class="grid grid-cols-4">
-        <div class="col-span-3 font-body text-sm pl-12 pr-8">
-          <p>
+        <div class="col-span-3 font-body text-sm pl-12 pr-8 space-y-12">
+          {
+            contentParagraphs.map((paragraph) => {
+              if (paragraph.anchorNumber) {
+                return (
+                  <p
+                    class="content-anchor"
+                    data-anchor-number={`${paragraph.anchorNumber}`}
+                  >
+                    {paragraph.text}
+                  </p>
+                );
+              }
+              return <p>{paragraph.text}</p>;
+            })
+          }
+          <!-- <p class="content-anchor" data-anchor-number="1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             posuere, odio et suscipit pharetra, erat tortor efficitur sapien,
             vel gravida urna orci non magna. Vestibulum nec risus sed nisi
@@ -55,8 +90,74 @@ const { project } = Astro.params;
             vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed
             nunc ac velit congue commodo.
           </p>
+          <p>
+            Sed varius pharetra nunc varius faucibus. Nam tempus vel augue in
+            egestas. Nunc molestie nisi ut tortor dignissim feugiat nec nec
+            lectus. Curabitur convallis, est sed finibus pharetra, sem felis
+            aliquam erat, sed egestas elit turpis non ipsum. Nulla molestie odio
+            enim, ac malesuada nulla tempor in. Donec commodo leo quis eleifend
+            mollis. Phasellus aliquet molestie mauris non porta. Sed mattis sem
+            ornare sodales sagittis. Suspendisse ac libero at justo porttitor
+            faucibus. Nullam at ex ipsum. Nunc leo leo, lacinia eu lorem eu,
+            tristique laoreet enim. Ut leo est, varius sed volutpat quis,
+            blandit efficitur massa. Nunc dictum velit a elit venenatis
+            fermentum.
+          </p>
+          <p class="content-anchor" data-anchor-number="2">
+            Morbi non ultrices orci. Pellentesque congue rhoncus velit, at
+            fringilla dolor sollicitudin vel. Vestibulum at leo nisi. Aenean
+            laoreet dolor justo, vitae malesuada risus pharetra vitae. Praesent
+            tempus nunc risus, id scelerisque tellus sagittis sit amet. Aliquam
+            elementum pretium quam non sagittis. Suspendisse potenti. Mauris
+            efficitur mollis quam, at pretium sem. Etiam tempus dolor eget
+            consectetur sodales. Nulla varius dolor felis, eget imperdiet erat
+            venenatis nec. Quisque ornare placerat turpis, nec scelerisque ipsum
+            lacinia sed. In rhoncus dignissim magna feugiat vestibulum. Aenean
+            sed orci a libero egestas malesuada vitae in nunc. Nam ut maximus
+            purus. Fusce hendrerit varius sollicitudin.
+          </p>
+          <p>
+            Nullam auctor tempus nisl ut commodo. Cras sed ipsum sed lectus
+            malesuada pellentesque vulputate vitae odio. Morbi luctus id eros
+            non congue. Donec id eros mollis, placerat mauris nec, rutrum neque.
+            Pellentesque varius arcu ut sem aliquet pretium. Maecenas sed leo
+            ultrices, suscipit felis in, bibendum est. Vestibulum ante ipsum
+            primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            Suspendisse potenti. Sed vitae neque viverra, sollicitudin lectus
+            in, elementum diam. Pellentesque gravida, metus vel pharetra
+            ullamcorper, leo tellus elementum nulla, quis lacinia massa libero
+            vitae eros. Maecenas interdum gravida nulla, id elementum arcu
+            varius ut. Etiam id maximus nunc, in molestie enim. Praesent finibus
+            hendrerit lobortis. Vivamus scelerisque enim et eros ultrices, quis
+            ultrices urna ultricies. Aenean sodales tempor malesuada.
+          </p>
+          <p class="content-anchor" data-anchor-number="3">
+            Mauris quis sem non purus tincidunt mattis. Fusce elit sem, finibus
+            eu ante vel, sollicitudin rutrum nibh. Fusce posuere, turpis et
+            varius consequat, velit massa faucibus lacus, ut convallis mauris
+            ligula non sapien. Donec vitae eros velit. In eu metus justo.
+            Integer ut sem vel arcu venenatis luctus. Vestibulum commodo iaculis
+            risus a tincidunt.
+          </p>
+          <p>
+            Donec quis quam non lacus fermentum pulvinar. In lobortis tortor at
+            nunc convallis venenatis. Mauris in augue ac velit consequat luctus
+            ut ac mi. Vestibulum sit amet arcu non mauris dictum ultricies. Cras
+            at interdum nulla, a tristique magna. Aenean sollicitudin, magna ut
+            rhoncus bibendum, enim enim vestibulum libero, non porta ipsum erat
+            eget risus. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. In sed sapien eu metus porta
+            vestibulum. Sed euismod libero et quam pellentesque, vel rutrum nisi
+            venenatis. In hac habitasse platea dictumst. Donec efficitur, orci
+            id pretium convallis, urna nulla posuere neque, vel elementum dolor
+            lacus vel nunc. Quisque magna ex, auctor id velit et, aliquet
+            efficitur nisi. Aliquam eu molestie augue, vitae porta augue. Aenean
+            sagittis dui vitae congue hendrerit. Praesent vitae posuere odio.
+            Integer magna nisl, aliquet sit amet porta quis, congue eget enim.
+          </p> -->
         </div>
-        <div class="border-t border-black flex flex-col items-start font-body">
+        <!-- Chapter selection -->
+        <!-- <div class="border-t border-black flex flex-col items-start font-body">
           <button
             class="project border-b border-black w-full hover:bg-mildOrange flex"
           >
@@ -77,8 +178,47 @@ const { project } = Astro.params;
           >
             <span class="text-1xl py-4">Chapter</span>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </Project>
+
+<script>
+  const contentAnchors = document.querySelectorAll(".content-anchor");
+  const contentWindow = document.querySelector("#content-window");
+  contentWindow?.addEventListener("scroll", () => {
+    console.log("\n");
+    let revealId = "-1";
+    contentAnchors.forEach((anchor) => {
+      const top = anchor.getBoundingClientRect().top;
+
+      const revealProportion = 1 / 2;
+      if (window.innerHeight * revealProportion >= top) {
+        console.log("revealed");
+        revealId = anchor.getAttribute("data-anchor-number") || "-1";
+      }
+    });
+
+    console.log(revealId);
+
+    const revealableElements = document.querySelectorAll(".revealed-content");
+    revealableElements.forEach((element) => {
+      if (element.getAttribute("data-anchor-number") === revealId) {
+        // reveal
+        element.classList.replace("opacity-0", "opacity-100");
+      } else {
+        //hide
+        element.classList.replace("opacity-100", "opacity-0");
+      }
+    });
+    const revealedElement = document.querySelector(
+      `span[data-anchor-number="${revealId}"]`
+    );
+
+    if (revealedElement?.classList.contains("opacity-0")) {
+      revealedElement?.classList.replace("opacity-0", "opacity-100");
+    }
+    console.log(revealedElement);
+  });
+</script>
