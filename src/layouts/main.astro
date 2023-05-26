@@ -14,7 +14,9 @@ const { title = "Liam Idrovo", navHidden = false } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="bg-brightOrange min-h-screen pb-12 py-6 font px-12">
+    <div
+      class="bg-brightOrange min-h-screen md:pb-12 md:py-6 py-3 font md:px-12 px-6"
+    >
       <slot />
       <Contact />
       {

@@ -17,28 +17,32 @@ I will also mention my interests and what you can expect from this site.
 ---
 
 <Main navHidden="true">
-  <div class="flex h-full">
+  <div class="grid grid-cols-2 h-full">
     <div class="flex flex-col w-fit">
-      <h1 class="text-6xl">LIAM</h1>
-      <h1 class="ml-20 text-6xl">IDROVO</h1>
-      <h1 class="text-4xl text-white">says hi</h1>
+      <h1 class="lg:text-6xl text-3xl">LIAM</h1>
+      <h1 class="lg:ml-20 ml-8 lg:text-6xl text-3xl">IDROVO</h1>
+      <h1 class="lg:text-4xl text-xl text-white">says hi</h1>
       <p
-        class="ml-20 font-body w-48 text-xs whitespace-break-spaces tracking-tight"
+        class="lg:ml-20 ml-8 font-body w-48 text-xs whitespace-break-spaces tracking-tight"
       >
         {text}
       </p>
     </div>
-    <div class="flex grow justify-center">
-      <div class="h-[30rem] w-[28rem] mt-32 relative text-xs font-body">
+    <div
+      class="sm:flex grow justify-center row-start-2 sm:row-start-1 sm:col-start-2"
+    >
+      <div
+        class="lg:h-[30rem] lg:w-[28rem] md:h-[24rem] md:w-[24rem] sm:h-[22rem] sm:w-[20rem] h-[15rem] w-[14rem] border sm:mt-32 relative text-xs font-body"
+      >
         <a
           href="/portfolio"
-          class="border-black border aspect-square w-5/12 flex justify-center items-center hover:w-7/12 transition-all hover:bg-mildOrange z-20 absolute"
+          class="border-black border aspect-square w-5/12 flex justify-center items-center hover:w-7/12 transition-all hover:bg-mildOrange z-20 absolute p-2"
         >
           <span>If you want to work with me</span>
         </a>
         <a
           href="/writings"
-          class="border-black border aspect-square w-7/12 bottom-0 right-0 absolute flex justify-center items-center hover:w-9/12 transition-all hover:bg-mildOrange hover:z-10 z-20"
+          class="border-black border aspect-square w-7/12 bottom-0 right-0 absolute flex justify-center items-center hover:w-9/12 transition-all hover:bg-mildOrange hover:z-10 z-20 p-2"
         >
           <span>If you want to get to know me</span>
         </a>
