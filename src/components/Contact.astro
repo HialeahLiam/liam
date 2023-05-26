@@ -2,12 +2,16 @@
 ---
 
 <div
+  id="contact"
   class="group border border-black rounded-full sm:py-6 sm:px-12 py-3 px-6 w-fit font-body text-sm fixed bottom-12"
 >
   <!-- point of this container is to prevent slashes from resizing border of contact button -->
   <div class="h-6 flex items-center">
-    <span class="group-hover:hidden group-active:hidden"> Reach me</span>
+    <span id="closed-content" class="group-hover:hidden group-active:hidden">
+      Reach me</span
+    >
     <div
+      id="open-content"
       class="group-hover:flex group-active:flex hidden cursor-default items-center gap-4"
     >
       <a class="cursor-pointer text-white"> Email</a>
@@ -20,3 +24,21 @@
     </div>
   </div>
 </div>
+
+<script>
+  const contact = document.querySelector("#contact");
+  const open = () => {
+    const closed = document.querySelector("#closed-content");
+    const opened = document.querySelector("#open-content");
+    closed?.classList.add("hidden");
+    opened?.classList.add("flex");
+  };
+  const close = () => {
+    const closed = document.querySelector("#closed-content");
+    const opened = document.querySelector("#open-content");
+    closed?.classList.remove("hidden");
+    opened?.classList.remove("flex");
+  };
+  contact?.addEventListener("touchend", open);
+  contact?.addEventListener("focusout", close);
+</script>
