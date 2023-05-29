@@ -46,8 +46,8 @@ const projectContent = project
     </div>
     <div id="content-window" class="h-screen py-12 overflow-y-scroll">
       <div class="flex justify-between items-center sm:px-12 px-8 mb-16">
-        <div class="flex items-center gap-6">
-          <h1 class="text-white text-4xl font-body">
+        <div class="flex items-center gap-6 grow ">
+          <h1 class="text-white text-4xl font-body max-w-[50%]">
             {projectContent?.data.projectName}
           </h1>
           {projectContent?.data.projectLink && 
@@ -237,7 +237,7 @@ const projectContent = project
     element.classList.add("translate-x-0");
   })
   
-  
+
 
   setTimeout(() => {
     revealContainer.classList.add("translate-x-0", "opacity-100");
