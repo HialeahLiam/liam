@@ -1,6 +1,7 @@
 ---
 import BrewRevealed from "../../components/revealedComponents/BrewRevealed.astro";
 import HeatmapRevealed from "../../components/revealedComponents/HeatmapRevealed.astro";
+import PodkastRevealed from "../../components/revealedComponents/PodkastRevealed.astro";
 import Project from "../../layouts/project.astro";
 import { projects } from "../portfolio.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -34,6 +35,8 @@ const projectContent = project
                 return <BrewRevealed />;
               case "spotify-heatmap":
                 return <HeatmapRevealed></HeatmapRevealed>
+              case "podkast":
+                return <PodkastRevealed></PodkastRevealed>
               default:
                 break;
             }
@@ -117,6 +120,9 @@ const projectContent = project
                               return <BrewRevealed reveal={paragraph.anchorNumber}/>;
                             case "spotify-heatmap":
                               return <HeatmapRevealed reveal={paragraph.anchorNumber}></HeatmapRevealed>
+                            case "podkast":
+
+                              return <PodkastRevealed reveal={paragraph.anchorNumber}></PodkastRevealed>
                             default:
                               break;
                           }

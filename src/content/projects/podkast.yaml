@@ -7,6 +7,7 @@ paragraphs:
       and I had to return to my object-oriented programming roots to utilizes Apple's ViewController-based
       UI architecture. I had to navigate Apple's extensive but at times excessive collection of iOS 
       libraries to choose appropriate classes and methods for my use cases.
+    anchorNumber: 1
   - text: >
       It felt like I had joined a company where Apple's Swift books were the only onboarding documents
       I recieved and I had to figure out how to use the company's libraries to immediately create a demo project.

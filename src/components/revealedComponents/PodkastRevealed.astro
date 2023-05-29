@@ -1,0 +1,32 @@
+---
+const { reveal } = Astro.props;
+---
+
+<!-- {
+  (!reveal || reveal === 1) && (
+    <div data-anchor-number="1" class="flex items-center justify-center ">
+      <div class="w-1/2 rounded-lg overflow-hidden   bg-black p-1 sm:p-2 md:p-3 bg-opacity-20 relative left-16 top-16">
+        <img src="../../../public/brew-genres.png" alt="" class="rounded-lg" />
+      </div>
+      <div class="w-1/2 rounded-lg overflow-hidden   bg-black p-1 sm:p-2 md:p-3 bg-opacity-20 relative right-16 z-10">
+        <img src="../../../public/brew-artists.png" alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+} -->{
+  (!reveal || reveal === 1) && (
+    <div
+      data-anchor-number="1"
+      class="flex items-center justify-center w-3/4 mx-auto "
+    >
+      <div class="w-1/2 rounded-lg overflow-hidden  relative  md:left-10 left-5 ">
+        <img src="/podkast-home.png" alt="" class="rounded-lg" />
+      </div>
+      <div class="w-1/2 rounded-lg overflow-hidden    relative  md:right-10 right-5 z-10 drop-shadow-xl">
+        <img src="/podkast-library.png" alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+}
+{(!reveal || reveal === 2) && <div data-anchor-number="2">second</div>}
+{(!reveal || reveal === 3) && <div data-anchor-number="3">third</div>}
