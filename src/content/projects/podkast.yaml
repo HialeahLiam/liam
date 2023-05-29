@@ -1,0 +1,29 @@
+projectName: Podkast
+projectLink: https://youtu.be/ZevQcOJDSsU
+projectGithub: https://github.com/HialeahLiam/Podkast
+paragraphs:
+  - text: >
+      To make an iOS app I had to learn a whole new paradigm of app building. There was no DOM
+      and I had to return to my object-oriented programming roots to utilizes Apple's ViewController-based
+      UI architecture. I had to navigate Apple's extensive but at times excessive collection of iOS 
+      libraries to choose appropriate classes and methods for my use cases.
+  - text: >
+      It felt like I had joined a company where Apple's Swift books were the only onboarding documents
+      I recieved and I had to figure out how to use the company's libraries to immediately create a demo project.
+      Like in a real company, wou will be overwhelmed by the options to choose from and will often have minimal guidance 
+      when creating an application on your own. I was forced to be selective with what I learned and used
+      and be effective in implementing features with myh minimal knowledge of the iOS ecosystem.
+  - text: >
+      I had to develop workarounds to since I was dependent on an external API I had no control over.
+  - text: >
+      I leveraged the API to emulate functionality without actually implementing it. I let Spotify do all the work 
+      of storing and playing back audio snippets. I only had to store snippet metadata. I learned, if you can, always
+      let others do the work for you.
+  - text: >
+      Experimenting with a new language and environment was like visiting another country. It reminded 
+      me that in development, like in life, there are multiple ways of accomplishing something. You might 
+      find a better solution in another approach, or that approach might make you cherish your approach even more.
+    anchorNumber: 3
+  - text: >
+      Discovering that your idea was executed by a Switzerland based start up with investor funding is a very assuring feeling. 
+      If you run into competition, it means you’re doing something right.

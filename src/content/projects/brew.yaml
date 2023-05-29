@@ -2,8 +2,23 @@ projectName: Brew.fm
 projectLink: https://www.brew.fm/
 paragraphs:
   - text: >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere, odio et suscipit pharetra, erat tortor efficitur sapien, vel gravida urna orci non magna. Vestibulum nec risus sed nisi sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac consequat turpis. Integer sapien velit, bibendum vel purus eu, congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper. Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl. In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien molestie volutpat. Sed et urna efficitur, bibendum erat sit amet, vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed nunc ac velit congue commodo.
+      Brew was exciting because I was working on the brainchild of another.
     anchorNumber: 1
+  - text: >
+      It was also a product I admired and I was able to pull back the curtain and see its insides. 
+
+      I found that when shipping a product by yourself and with a small team, the insides typically do not reflect what is shown the execution of ideas trumps the robustness of your code. 
+
+      You shouldn’t stay married to your ideas until they produce results. Then can you make your code robust. 
+
+      However, migrating the data of over 3000 users from firebase to planet scale made me realize the backend requires a lot more stability than the front end. 
+      In the backend, mistakes can be permanent, something that is not the case on the front end where you can be guided by experimentation instead of precise logic. 
+
+      Brew also made me appreciate the value of a well crafted UI. The principle feature of brew when I joined was the stats page. 
+      However, this page is just a prettified display of Spotify’s web api. 
+      This hooked users just enough for them to use the new releases feature. 
+      A well crafted UI will guide a user through your applications corridors without them even noticing.
+
   - text: >
       Sed varius pharetra nunc varius faucibus. Nam tempus vel augue in egestas. Nunc molestie nisi ut tortor dignissim feugiat nec nec lectus. Curabitur convallis, est sed finibus pharetra, sem felis aliquam erat, sed egestas elit turpis non ipsum. Nulla molestie odio enim, ac malesuada nulla tempor in. Donec commodo leo quis eleifend mollis. Phasellus aliquet molestie mauris non porta. Sed mattis sem ornare sodales sagittis. Suspendisse ac libero at justo porttitor faucibus. Nullam at ex ipsum. Nunc leo leo, lacinia eu lorem eu, tristique laoreet enim. Ut leo est, varius sed volutpat quis, blandit efficitur massa. Nunc dictum velit a elit venenatis fermentum.
   - text: >

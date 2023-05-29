@@ -1,0 +1,30 @@
+projectName: Spotify Heatmap
+projectLink: https://spotify-pitch-mapper.vercel.app
+projectGithub: https://github.com/HialeahLiam/Spotify-Pitch-Mapper
+paragraphs:
+  - text: >
+      Spotify analysis endpoint always called out to me. Was it magic? Could Spotify detect notes?
+  - text: I built Spotify Heatmap to find out.
+  - text: >
+      Since the application is essentially a visualization tool for Spotify's pitch analysis endpoint, I was able to experiment with different tracks
+      and observe that it did very well with solo piano pieces and awfully terrible with percussion-heavy pieces. 
+      For the former, it typically correctly identified the root and the third of whatever chord was playing.
+      In the latter context, it usually recognized just the bassline accurately.
+  - text: >
+      Another principal reason I built Spotify Heatmap was to see if I could build and deploy a product within a week. 
+      Heatmap was worked on for a week in February during the hours of 5-9pm inside an Echo Park bookstore.
+  - text: >
+      Using Astro made me realize how uncomfortable I was with using VanillaJS for UI and how lovely the React philosophy is. 
+      I quickly realized the declarative nature of React replaces the cumbersome process of keeping track of dynamic elements
+      and their associated event handlers with VanillaJS.q In React elements almost become a type of listener that you don't have to touch, just update the state they
+      listen to. It prevents the mess of event handlers and element querying VanillaJS typically introduces into the codebase.
+  - text: >
+      I chose Astro because I heard it was a performant way to build site that weren't full-fledged applications.
+      I also wanted to try out the hype I'd been hearing about.
+      With Heatmap, I only ran into obstacles when components were dynamic and reliant on state (Astro docs even say it is focused on content not interactivity).
+      If this app were larger and required lots more shared state across components, it would be easy to make a mess of things just HTML and VanillaJS.
+      You would have to engineer solutions that the Next.js/React combo already provides.
+  - text: >
+      Heatmap plans for the future would be to make the UI more visually appealing, make it work on Safari, create additional visualizations for Spotify's other audio
+      analysis endpoints, create blog posts informally discussing the findings of the visualizations, and including information on how the visualizations work
+      and what they represent.
