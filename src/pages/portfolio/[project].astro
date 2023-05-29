@@ -1,5 +1,6 @@
 ---
 import BrewRevealed from "../../components/revealedComponents/BrewRevealed.astro";
+import HeatmapRevealed from "../../components/revealedComponents/HeatmapRevealed.astro";
 import Project from "../../layouts/project.astro";
 import { projects } from "../portfolio.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
   }));
 }
 const { project } = Astro.params;
+console.log({project})
 
 const projectContent = project
   ? await getEntry("projects", project)
@@ -30,6 +32,8 @@ const projectContent = project
             switch (project) {
               case "brew":
                 return <BrewRevealed />;
+              case "spotify-heatmap":
+                return <HeatmapRevealed></HeatmapRevealed>
               default:
                 break;
             }
@@ -106,7 +110,18 @@ const projectContent = project
                       class="reveal-container transition duration-1000 opacity-0 -translate-x-56  sm:hidden"
                       data-anchor-number={`${paragraph.anchorNumber}`}
                     >
-                      <BrewRevealed reveal={paragraph.anchorNumber} />
+                      {
+                        (() => {
+                          switch (project) {
+                            case "brew":
+                              return <BrewRevealed reveal={paragraph.anchorNumber}/>;
+                            case "spotify-heatmap":
+                              return <HeatmapRevealed reveal={paragraph.anchorNumber}></HeatmapRevealed>
+                            default:
+                              break;
+                          }
+                        })()
+                      }
                     </div>
                   </>
                 );
@@ -211,6 +226,10 @@ const projectContent = project
 
   contentWindow?.addEventListener("scroll", reveal);
   reveal();
+  document.querySelectorAll('div[data-anchor-number="1"]').forEach(element => {
+    element.classList.replace("opacity-0", "opacity-100");
+  })
+  
 
   setTimeout(() => {
     revealContainer.classList.add("translate-x-0", "opacity-100");

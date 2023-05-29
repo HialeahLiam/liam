@@ -4,6 +4,7 @@ projectGithub: https://github.com/HialeahLiam/Spotify-Pitch-Mapper
 paragraphs:
   - text: >
       Spotify analysis endpoint always called out to me. Was it magic? Could Spotify detect notes?
+    anchorNumber: 1
   - text: I built Spotify Heatmap to find out.
   - text: >
       Since the application is essentially a visualization tool for Spotify's pitch analysis endpoint, I was able to experiment with different tracks

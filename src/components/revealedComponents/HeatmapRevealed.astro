@@ -1,0 +1,36 @@
+---
+const { reveal } = Astro.props;
+---
+
+<!-- {
+  (!reveal || reveal === 1) && (
+    <div data-anchor-number="1" class="flex items-center justify-center ">
+      <div class="w-1/2 rounded-lg overflow-hidden   bg-black p-1 sm:p-2 md:p-3 bg-opacity-20 relative left-16 top-16">
+        <img src="../../../public/brew-genres.png" alt="" class="rounded-lg" />
+      </div>
+      <div class="w-1/2 rounded-lg overflow-hidden   bg-black p-1 sm:p-2 md:p-3 bg-opacity-20 relative right-16 z-10">
+        <img src="../../../public/brew-artists.png" alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+} -->{
+  (!reveal || reveal === 1) && (
+    <div
+      data-anchor-number="1"
+      class="flex flex-col items-center justify-center "
+    >
+      <div class="w-1/2 rounded-lg overflow-hidden  relative md:top-8 md:-left-16 top-5 -left-10 z-10 drop-shadow">
+        <img
+          src="../../../public/heatmap-track-display.png"
+          alt=""
+          class="rounded-lg"
+        />
+      </div>
+      <div class="w-1/2 rounded-lg overflow-hidden    relative md:-right-16  md:bottom-8 -right-10 bottom-5">
+        <img src="../../../public/heatmap-keys.png" alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+}
+{(!reveal || reveal === 2) && <div data-anchor-number="2">second</div>}
+{(!reveal || reveal === 3) && <div data-anchor-number="3">third</div>}
