@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
 const { reveal } = Astro.props;
+
+import podkastHomeImage from "../../assets/podkast-home.png";
+import podkastLibraryImage from "../../assets/podkast-library.png";
 ---
 
 <!-- {
@@ -17,13 +21,13 @@ const { reveal } = Astro.props;
   (!reveal || reveal === 1) && (
     <div
       data-anchor-number="1"
-      class="flex items-center justify-center w-3/4 mx-auto "
+      class="flex items-center justify-center w-3/4 mx-auto container border "
     >
       <div class="w-1/2 rounded-lg overflow-hidden  relative  md:left-10 left-5 ">
-        <img src="/podkast-home.png" alt="" class="rounded-lg" />
+        <Image src={podkastHomeImage} alt="" class="rounded-lg" />
       </div>
       <div class="w-1/2 rounded-lg overflow-hidden    relative  md:right-10 right-5 z-10 drop-shadow-xl">
-        <img src="/podkast-library.png" alt="" class="rounded-lg" />
+        <Image src={podkastLibraryImage} alt="" class="rounded-lg" />
       </div>
     </div>
   )
