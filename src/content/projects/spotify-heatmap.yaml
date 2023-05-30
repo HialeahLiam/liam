@@ -11,6 +11,7 @@ paragraphs:
       and observe that it did very well with solo piano pieces and awfully terrible with percussion-heavy pieces. 
       For the former, it typically correctly identified the root and the third of whatever chord was playing.
       In the latter context, it usually recognized just the bassline accurately.
+    anchorNumber: 2
   - text: >
       Another principal reason I built Spotify Heatmap was to see if I could build and deploy a product within a week. 
       Heatmap was worked on for a week in February during the hours of 5-9pm inside an Echo Park bookstore.

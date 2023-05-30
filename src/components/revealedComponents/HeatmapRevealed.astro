@@ -4,6 +4,7 @@ const { reveal } = Astro.props;
 import { Image } from "astro:assets";
 import heatmapKeys from "../../assets/heatmap-keys.png";
 import heatmapTrackDisplay from "../../assets/heatmap-track-display.png";
+import spotifyApiPitchesImage from "../../assets/spotify-api-pitches.png";
 ---
 
 <!-- {
@@ -32,5 +33,16 @@ import heatmapTrackDisplay from "../../assets/heatmap-track-display.png";
     </div>
   )
 }
-{(!reveal || reveal === 2) && <div data-anchor-number="2">second</div>}
+{
+  (!reveal || reveal === 2) && (
+    <div
+      data-anchor-number="2"
+      class="flex items-center justify-center w-3/4 mx-auto container "
+    >
+      <div class="w-3/4 rounded-lg overflow-hidden  drop-shadow-[0_0px_20px_rgba(114,31,242,0.30)]">
+        <Image src={spotifyApiPitchesImage} alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+}
 {(!reveal || reveal === 3) && <div data-anchor-number="3">third</div>}

@@ -3,28 +3,38 @@ projectLink: https://youtu.be/ZevQcOJDSsU
 projectGithub: https://github.com/HialeahLiam/Podkast
 paragraphs:
   - text: >
+      Back in November 2022, I had been itching to launch a product that was actually utilitarian and did not 
+      require an existing user base to function.
+    anchorNumber: 1
+  - text: >
+      So I created Podkast!
+  - text: >
+      After spending weeks brainstorming product ideas, the development Gods whispered into my ear while I lay in bed 
+      listening to Dax Shepard talk about surfing in Hawaii: I'll make an app that let's you save snippets of Spotify 
+      podcasts!
+  - text: >
+      My ambition had been to create an MVP as fast as I possibly could and submit it to the App Store.
       To make an iOS app I had to learn a whole new paradigm of app building. There was no DOM
       and I had to return to my object-oriented programming roots to utilizes Apple's ViewController-based
       UI architecture. I had to navigate Apple's extensive but at times excessive collection of iOS 
       libraries to choose appropriate classes and methods for my use cases.
-    anchorNumber: 1
   - text: >
-      It felt like I had joined a company where Apple's Swift books were the only onboarding documents
-      I recieved and I had to figure out how to use the company's libraries to immediately create a demo project.
-      Like in a real company, wou will be overwhelmed by the options to choose from and will often have minimal guidance 
-      when creating an application on your own. I was forced to be selective with what I learned and used
-      and be effective in implementing features with myh minimal knowledge of the iOS ecosystem.
+      I felt like I had joined a company where Apple's Swift books were the only onboarding documents
+      I recieved and I had to quickly figure out how to use the company's libraries.
+      I was forced to be selective with what I used
+      and  effective in implementing features with my minimal knowledge of the iOS ecosystem.
+    anchorNumber: 2
   - text: >
-      I had to develop workarounds to since I was dependent on an external API I had no control over.
-  - text: >
-      I leveraged the API to emulate functionality without actually implementing it. I let Spotify do all the work 
-      of storing and playing back audio snippets. I only had to store snippet metadata. I learned, if you can, always
+      As for how I implemented the storage and playback of podcast snippets,
+      I leveraged Spotify's web API to emulate functionality without actually implementing it. I let Spotify do all the work 
+      of storing and playing back audio snippets, I only had to store snippet metadata. I learned, if you can, always
       let others do the work for you.
   - text: >
       Experimenting with a new language and environment was like visiting another country. It reminded 
       me that in development, like in life, there are multiple ways of accomplishing something. You might 
       find a better solution in another approach, or that approach might make you cherish your approach even more.
-    anchorNumber: 3
   - text: >
-      Discovering that your idea was executed by a Switzerland based start up with investor funding is a very assuring feeling. 
-      If you run into competition, it means you’re doing something right.
+      Ultimately, I gave up on the project after finding Snipd, an app that already had accomplished Podkast's ambitions, and far better!
+      Around that time, I began to work on Brew.fm and decided to continue investing time into web development instead of the iOS ecosystem.
+      However, discovering that your idea was executed by a Switzerland-based start up with investor funding was a very assuring feeling. 
+      If you run into competition, it means you were doing something right!

@@ -4,6 +4,8 @@ const { reveal } = Astro.props;
 
 import podkastHomeImage from "../../assets/podkast-home.png";
 import podkastLibraryImage from "../../assets/podkast-library.png";
+import swiftDataCollectionsImage from "../../assets/swift-data-collections-book.png";
+import swiftFundamentalsImage from "../../assets/swift-fundamentals-book.png";
 ---
 
 <!-- {
@@ -21,7 +23,7 @@ import podkastLibraryImage from "../../assets/podkast-library.png";
   (!reveal || reveal === 1) && (
     <div
       data-anchor-number="1"
-      class="flex items-center justify-center w-3/4 mx-auto container border "
+      class="flex items-center justify-center w-3/4 mx-auto container "
     >
       <div class="w-1/2 rounded-lg overflow-hidden  relative  md:left-10 left-5 ">
         <Image src={podkastHomeImage} alt="" class="rounded-lg" />
@@ -32,5 +34,19 @@ import podkastLibraryImage from "../../assets/podkast-library.png";
     </div>
   )
 }
-{(!reveal || reveal === 2) && <div data-anchor-number="2">second</div>}
+{
+  (!reveal || reveal === 2) && (
+    <div
+      data-anchor-number="2"
+      class="flex  items-center justify-center container w-3/4 mx-auto xl:gap-18 lg:gap-12 gap-10 "
+    >
+      <div class=" rounded-lg overflow-hidden relative md:bottom-20 sm:bottom-16 bottom-6  z-10 drop-shadow-[0_0px_30px_rgba(237,143,56,0.30)]">
+        <Image src={swiftDataCollectionsImage} alt="" class="rounded-lg" />
+      </div>
+      <div class=" rounded-lg overflow-hidden  relative md:top-20  sm:top-16 top-6  drop-shadow-[0_0px_30px_rgba(237,143,56,0.30)]">
+        <Image src={swiftFundamentalsImage} alt="" class="rounded-lg" />
+      </div>
+    </div>
+  )
+}
 {(!reveal || reveal === 3) && <div data-anchor-number="3">third</div>}
