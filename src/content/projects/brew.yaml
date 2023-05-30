@@ -2,62 +2,20 @@ projectName: Brew.fm
 projectLink: https://www.brew.fm/
 paragraphs:
   - text: >
-      Brew was exciting because I was working on the brainchild of another.
+      The brainchild of another, Brew has gifted me phenomenal learning experience.
     anchorNumber: 1
   - text: >
-      It was also a product I admired and I was able to pull back the curtain and see its insides. 
-
-      I found that when shipping a product by yourself and with a small team, the insides typically do not reflect what is shown the execution of ideas trumps the robustness of your code. 
-
-      You shouldn’t stay married to your ideas until they produce results. Then can you make your code robust. 
-
-      However, migrating the data of over 3000 users from firebase to planet scale made me realize the backend requires a lot more stability than the front end. 
-      In the backend, mistakes can be permanent, something that is not the case on the front end where you can be guided by experimentation instead of precise logic. 
-
-      Brew also made me appreciate the value of a well crafted UI. The principle feature of brew when I joined was the stats page. 
-      However, this page is just a prettified display of Spotify’s web api. 
-      This hooked users just enough for them to use the new releases feature. 
-      A well crafted UI will guide a user through your applications corridors without them even noticing.
-
+      While working on my iOS app, Podkast, I stumbled onto Brew and admired its beautifully crafted UI and
+      its ingenuity in leveraging Spotify's Web API to track new releases you actually care about.
+      I was so captivated by it, in fact, that I reached out to its creator Bart Proost through Twitter.
+      After a few chats and beers in Los Feliz, I began working on Brew myself!
   - text: >
-      Sed varius pharetra nunc varius faucibus. Nam tempus vel augue in egestas. Nunc molestie nisi ut tortor dignissim feugiat nec nec lectus. Curabitur convallis, est sed finibus pharetra, sem felis aliquam erat, sed egestas elit turpis non ipsum. Nulla molestie odio enim, ac malesuada nulla tempor in. Donec commodo leo quis eleifend mollis. Phasellus aliquet molestie mauris non porta. Sed mattis sem ornare sodales sagittis. Suspendisse ac libero at justo porttitor faucibus. Nullam at ex ipsum. Nunc leo leo, lacinia eu lorem eu, tristique laoreet enim. Ut leo est, varius sed volutpat quis, blandit efficitur massa. Nunc dictum velit a elit venenatis fermentum.
+      Our main motivation with Brew at the moment is to have our 3000+ users reengage with the application by introducing 
+      a social component to Brew. Since I've joined, we have refactored the code to replace our use of Firebase's Firestore and Cloud Functions with
+      tRPC, Prisma and a relational database to ensure type safety across the entire stack. We have also transformed our algorithm for track recommendations
+      to sort the recommendations based on user hierarchies we create for each seed track.
   - text: >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere, odio et suscipit pharetra, erat tortor efficitur sapien, vel gravida urna orci non magna. Vestibulum nec risus sed nisi sodales facilisis at tincidunt dolor. Aenean eu aliquam ligula, ac consequat turpis. Integer sapien velit, bibendum vel purus eu, congue tincidunt odio. Vestibulum imperdiet vulputate ullamcorper. Nulla enim nisl, suscipit nec finibus non, suscipit sit amet nisl. In dapibus sagittis nunc non maximus. Donec iaculis risus eu sapien molestie volutpat. Sed et urna efficitur, bibendum erat sit amet, vehicula arcu. In sed scelerisque enim, eu interdum quam. Proin sed nunc ac velit congue commodo.
-    anchorNumber: 2
-  - text: >
-      Nullam auctor tempus nisl ut commodo. Cras sed ipsum sed lectus
-          malesuada pellentesque vulputate vitae odio. Morbi luctus id eros
-          non congue. Donec id eros mollis, placerat mauris nec, rutrum neque.
-          Pellentesque varius arcu ut sem aliquet pretium. Maecenas sed leo
-          ultrices, suscipit felis in, bibendum est. Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices posuere cubilia curae;
-          Suspendisse potenti. Sed vitae neque viverra, sollicitudin lectus
-          in, elementum diam. Pellentesque gravida, metus vel pharetra
-          ullamcorper, leo tellus elementum nulla, quis lacinia massa libero
-          vitae eros. Maecenas interdum gravida nulla, id elementum arcu
-          varius ut. Etiam id maximus nunc, in molestie enim. Praesent finibus
-          hendrerit lobortis. Vivamus scelerisque enim et eros ultrices, quis
-          ultrices urna ultricies. Aenean sodales tempor malesuada.
-  - text: >
-      Mauris quis sem non purus tincidunt mattis. Fusce elit sem, finibus
-            eu ante vel, sollicitudin rutrum nibh. Fusce posuere, turpis et
-            varius consequat, velit massa faucibus lacus, ut convallis mauris
-            ligula non sapien. Donec vitae eros velit. In eu metus justo.
-            Integer ut sem vel arcu venenatis luctus. Vestibulum commodo iaculis
-            risus a tincidunt.
-    anchorNumber: 3
-  - text: >
-      Donec quis quam non lacus fermentum pulvinar. In lobortis tortor at
-            nunc convallis venenatis. Mauris in augue ac velit consequat luctus
-            ut ac mi. Vestibulum sit amet arcu non mauris dictum ultricies. Cras
-            at interdum nulla, a tristique magna. Aenean sollicitudin, magna ut
-            rhoncus bibendum, enim enim vestibulum libero, non porta ipsum erat
-            eget risus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. In sed sapien eu metus porta
-            vestibulum. Sed euismod libero et quam pellentesque, vel rutrum nisi
-            venenatis. In hac habitasse platea dictumst. Donec efficitur, orci
-            id pretium convallis, urna nulla posuere neque, vel elementum dolor
-            lacus vel nunc. Quisque magna ex, auctor id velit et, aliquet
-            efficitur nisi. Aliquam eu molestie augue, vitae porta augue. Aenean
-            sagittis dui vitae congue hendrerit. Praesent vitae posuere odio.
-            Integer magna nisl, aliquet sit amet porta quis, congue eget enim.
+      I feel very fortunate to have worked with Bart and to have pulled back the curtains of a product I envied and see its insides. 
+
+      I've learned that when shipping a product alone or with a small team, the insides typically do not reflect what is shown on the outside. The execution of ideas trumps the robustness of your code. 
+      You shouldn’t stay married to your ideas until they produce results. Then can you make your code robust!
