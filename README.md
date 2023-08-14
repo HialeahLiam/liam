@@ -1,13 +1,21 @@
-# Astro with Tailwind
+# Liam Idrovo says hi
 
-```
-npm create astro@latest -- --template with-tailwindcss
-```
+This is the code to my personal site.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+As someone born in 1999 having grown up without and then with contemporary technology, I'm tired of being inundated with content.
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+Too many words.
+Too many links.
+Am I even real if all I do is consume pixel content?
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+As a response to the phenomenon of becoming a digital serf, I decided to make a barebones design for my site. I wanted it straightforward, underwhelming in content, and intriguing to look at.
+
+I'm not a designer though (yet). So to make my vision a reality I borrowed (stole) the design from [this awesome cat site](https://cat.humbleteam.com).
+
+# Using Astro
+
+I heard a lot about Astro through the [JS Party Podcast by Changelog](https://changelog.com/jsparty/238).
+
+It's a JS framework geared specifically towards static and content-rich sites.
+
+React is my frontend tool of choice, but I'm a sucker for the initiative to keep things stupid simple. My site was the perfect opportunity to play around with Astro.

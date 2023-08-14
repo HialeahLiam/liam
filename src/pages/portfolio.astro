@@ -8,15 +8,16 @@ export const projects = [
   {
     id: "brew",
     label: "Brew.fm",
+    link: "https://www.brew.fm",
   },
-  {
-    id: "podkast",
-    label: "Podkast",
-  },
-  {
-    id: "spotify-heatmap",
-    label: "Spotify Heatmap",
-  },
+  // {
+  //   id: "podkast",
+  //   label: "Podkast",
+  // },
+  // {
+  //   id: "spotify-heatmap",
+  //   label: "Spotify Heatmap",
+  // },
   // {
   //   id: "capgemini",
   //   label: "Capgemini",
@@ -32,7 +33,7 @@ export const projects = [
         {
           projects.map((project) => (
             <a
-              href={`/portfolio/${project.id}`}
+              href={project.link ? project.link : `/portfolio/${project.id}`}
               id={project.id}
               class="project border-b-2 border-black w-full hover:bg-mildOrange flex"
             >
