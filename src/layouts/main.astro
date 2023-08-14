@@ -11,6 +11,11 @@ const { title = "Liam Idrovo", navHidden = false } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/46f02b8bb2.js"
+      crossorigin="anonymous"
+    ></script>
     <title>{title}</title>
   </head>
   <body>
@@ -18,7 +23,12 @@ const { title = "Liam Idrovo", navHidden = false } = Astro.props;
       class="bg-brightOrange absolute inset-0 sm:pb-12 sm:py-6 py-3 font md:px-12 px-6 flex flex-col"
     >
       <slot />
-      <Contact />
+      <div class="flex justify-between mt-auto items-end">
+        <Contact />
+        <a href="https://github.com/HialeahLiam/liam">
+          <i class="fa-brands fa-github fa-xl" style="color: black;"></i>
+        </a>
+      </div>
       {
         !navHidden && (
           <div class="absolute md:inset-x-12 inset-x-6  sm:top-8 left-6 top-2">
