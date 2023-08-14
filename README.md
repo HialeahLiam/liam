@@ -20,4 +20,4 @@ I heard a lot about Astro through the [JS Party Podcast by Changelog](https://ch
 
 It's a JS framework geared specifically towards static and content-rich sites.
 
-React is my frontend tool of choice, but I'm a sucker any initiative to keep things stupid simple. My site was the perfect opportunity to play around with Astro.
+React is my frontend tool of choice, but I'm a sucker for any initiative to keep things stupid simple. My site was the perfect opportunity to play around with Astro.
